@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --surface-2: #eef0f6;
+  --fg: #1b1e2b;
+  --muted: #6b7086;
+  --border: #dde0ea;
+  --primary: #4f46e5;
+  --primary-soft: #eceafe;
+  --accent: #f59e0b;
+  --success: #16a34a;
+  --success-soft: #dcfce7;
+  --danger: #dc2626;
+  --danger-soft: #fee2e2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1117;
+    --surface: #181b24;
+    --surface-2: #222632;
+    --fg: #e8eaf2;
+    --muted: #9298ad;
+    --border: #2c3140;
+    --primary: #818cf8;
+    --primary-soft: #262a4d;
+    --accent: #fbbf24;
+    --success: #4ade80;
+    --success-soft: #133222;
+    --danger: #f87171;
+    --danger-soft: #3b1717;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-soft: var(--primary-soft);
+  --color-accent: var(--accent);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --font-sans: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-primary px-6 py-2.5 font-semibold text-white shadow-sm transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40 dark:text-bg;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xl border border-border bg-surface px-6 py-2.5 font-semibold transition hover:bg-surface-2;
+  }
+}
